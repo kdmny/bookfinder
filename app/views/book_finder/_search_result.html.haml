@@ -1,4 +1,8 @@
-#wrapper
-  %p= "{{title}}"
-  #calc
-    {{calc}}
+.search_result
+  %img{:src=>"{{img_url}}"}
+  #meta
+    .links
+      %a{:href=>"{{gr_url}}"} goodreads.com
+    %h3= "{{title}}"
+    %p= "by: {{author}}"
+    

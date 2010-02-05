@@ -1,2 +1,26 @@
-= link_to_remote "dude", :url => "/bookfinder", :method => :get
+%style
+  :sass
+    #result
+      .search_result
+        position: relative
+        img
+          border: 2px solid #c0c0c0
+          height: 150px
+          left: 0
+          padding-top: 9px
+          position: absolute
+          width: 150px
+        #meta
+          padding: 0px 0 0 165px
+          .links
+            display: block
+            float: right
+          h3
+            font-size: 1.5em
+          h3, p
+            margin: 0
+            padding: 0
+            
+
+= link_to_remote "dude", :url => "/bookfinder?s=The+Four+Steps+to+the+Epiphany", :method => :get
 #result

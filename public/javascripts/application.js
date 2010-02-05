@@ -48,18 +48,10 @@ function show_loading(msg){
 
 jQuery.ajaxSetup({ 
   'beforeSend': function(xhr) {
-/*    modal_opened = false;*/
-		xhr.setRequestHeader("Accept", "text/javascript");
-/*    jQuery("#wrapper").addClass('busy');*/
-/*    if(prompt && prompt.isOpened()) 
-      show_loading('process your request.');
-*/		
+		xhr.setRequestHeader("Accept", "text/javascript");		
 	},
 	'complete': function(xhr) {
-/*    if(progress && progress.isOpened()) progress.close();
-    if(!modal_opened && prompt) prompt.close();
-    if(modal_opened) {jQuery("#prompt").show();jQuery("#expose").show();}
-*/	}
+ }
 })
 
 jQuery.fn.submitWithAjax = function(prefilter) {
@@ -70,6 +62,16 @@ jQuery.fn.submitWithAjax = function(prefilter) {
   });
   return this;
 };
+
+function generate_view(xml){
+  best_book = $(xml).find("best_book");
+  view = new Object();
+  view.title = best_book.find("title").get(0).innerHTML;
+  view.author = best_book.find("author").find("name").get(0).innerHTML;
+  view.img_url = best_book.find("my_review").find("book").find("image_url").get(0).innerHTML;
+  view.gr_url = best_book.find("my_review").find("book").find("link").get(0).innerHTML;  
+  return view;
+}
 
 
 

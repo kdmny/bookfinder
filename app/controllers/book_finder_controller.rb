@@ -2,7 +2,7 @@ class BookFinderController < ApplicationController
   
   def search
     respond_to do |format|
-      # format.html{}
+      @search_phrase = params[:s]
       format.js{}
     end
   end
